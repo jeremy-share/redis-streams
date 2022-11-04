@@ -1,0 +1,14 @@
+version: '3.7'
+
+networks:
+  main:
+    name: redis-streams-main
+    external: true
+
+services:
+  app:
+    build: .
+    volumes:
+      - ./:/opt/project
+    networks:
+      - main
